@@ -13,10 +13,12 @@ function criaCalculadora(){
 
           if(el.classList.contains('btn-clear')){
             this.clearBtn()
+            this.display.focus()
            }
 
            if(el.classList.contains('btn-del')){
             this.delOne()
+            this.display.focus()
            }
 
            if(el.classList.contains('btn-eq')){
@@ -28,6 +30,7 @@ function criaCalculadora(){
 
         btnParaDisplay(valor){
         this.display.value += valor
+        this.display.focus()
         },
 
         clearBtn(){
@@ -53,6 +56,7 @@ function criaCalculadora(){
                 
             }catch(e){
                 alert('Precisa de conta')
+                this.display.value = ' '
                 return
             }
         },
@@ -69,4 +73,6 @@ function criaCalculadora(){
 
 const calculadora = criaCalculadora()
 calculadora.iniciar()
+
+//aaa
 
